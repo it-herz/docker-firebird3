@@ -5,7 +5,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt update && apt install -y wget libtommath-dev libicu-dev && \
     mkdir /root/fb && cd /root/fb && wget https://sourceforge.net/projects/firebird/files/firebird-linux-amd64/3.0-Release/Firebird-3.0.0.32483-0.amd64.tar.gz/download && \
     tar xzvpf download && cd Firebird* && ./install.sh -silent && \
-    echo "DatabaseAccess = Restrict /databases" >>/opt/firebird/firebird.conf
+    echo "DatabaseAccess = Restrict /databases" >>/opt/firebird/firebird.conf && \
+    echo "ServerMode = SuperClassic" >>/opt/firebird/firebird.conf
 
 WORKDIR /opt/firebird/bin
 

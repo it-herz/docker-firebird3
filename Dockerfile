@@ -8,4 +8,4 @@ RUN apt update && apt install -y wget libtommath-dev libicu-dev && \
 
 WORKDIR /opt/firebird/bin
 
-ENTRYPOINT [ "fbguard" ]
+ENTRYPOINT [ "./fbguard" ]

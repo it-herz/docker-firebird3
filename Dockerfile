@@ -12,4 +12,6 @@ WORKDIR /opt/firebird/bin
 
 VOLUME [ "/databases" ]
 
+EXPOSE 3050
+
 ENTRYPOINT [ "./fbguard" ]

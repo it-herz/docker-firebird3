@@ -8,8 +8,8 @@ RUN apt update && apt install -y wget libtommath-dev libicu-dev && \
     echo "DatabaseAccess = Full" >>/opt/firebird/firebird.conf && \
     echo "ServerMode = SuperClassic" >>/opt/firebird/firebird.conf && \
     echo "WireCrypt = Enabled" >>/opt/firebird/firebird.conf && \
-    echo "AuthServer = Srp, Win_Sspi, Legacy_Auth" >>/opt/firebird/firebird.conf && \
-    echo "UserManager = Srp, Legacy_UserManager" >>/opt/firebird/firebird.conf
+    echo "AuthServer = Legacy_Auth, Srp, Win_Sspi " >>/opt/firebird/firebird.conf && \
+    echo "UserManager = Legacy_UserManager, Srp" >>/opt/firebird/firebird.conf
 
 WORKDIR /opt/firebird/bin
 
